@@ -1,3 +1,17 @@
+.profile-picture {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
