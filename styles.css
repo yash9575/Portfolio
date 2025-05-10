@@ -1,16 +1,20 @@
 .profile-picture {
     position: absolute;
     top: 20px;
+    display: flex;
     right: 20px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
 }
 
 .profile-picture img {
-    width: 100px;
-    height: 100px;
+    width: 184px;
+    transform: scale(1.1);
+    zoom: 0;
+    height: 212px;
     object-fit: cover;
 }
 
