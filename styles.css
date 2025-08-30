@@ -1,23 +1,4 @@
-.profile-picture {
-    position: absolute;
-    top: 20px;
-    display: flex;
-    right: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-}
-
-.profile-picture img {
-    width: 184px;
-    transform: scale(1.1);
-    zoom: 0;
-    height: 212px;
-    object-fit: cover;
-}
-
+/* General */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -25,14 +6,25 @@ body {
     line-height: 1.6;
 }
 
+/* Header + Nav */
 header {
     background-color: #333;
     color: #fff;
     padding: 1em;
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 nav ul {
@@ -40,57 +32,75 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 2em;
-}
-
-nav li {
-    margin: 0;
+    gap: 1.5em;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #ddd;
 }
 
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Profile Picture */
+.profile-picture {
+    margin: 1em auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    height: 150px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sections */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
+    padding: 1.5em;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section {
     background-color: #f7f7f7;
-    padding: 2em;
+    padding: 1.5em;
     margin-bottom: 2em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     border-radius: 8px;
 }
 
-h1 {
+h1, h2 {
     color: #333;
-    margin-bottom: 0.5em;
 }
 
-h2 {
-    color: #666;
-    margin-bottom: 0.5em;
+/* Tables */
+.table-container {
+    overflow-x: auto;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 1em;
+    min-width: 500px;
 }
 
 th, td {
@@ -101,17 +111,11 @@ th, td {
 
 th {
     background-color: #f0f0f0;
-    font-weight: bold;
 }
 
+/* Forms */
 .form-group {
     margin-bottom: 1em;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
 }
 
 .form-group input,
@@ -120,14 +124,9 @@ th {
     padding: 0.5em;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1em;
 }
 
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
+/* Buttons */
 button {
     background-color: #333;
     color: #fff;
@@ -135,14 +134,13 @@ button {
     padding: 0.75em 1.5em;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #555;
 }
 
+/* Scroll to top */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -152,26 +150,38 @@ button:hover {
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
-    cursor: pointer;
     display: none;
 }
+.scroll-to-top.show { display: block; }
 
-.scroll-to-top.show {
-    display: block;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
+        display: none;
         flex-direction: column;
         gap: 1em;
+        background-color: #333;
+        padding: 1em;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        border-radius: 8px;
     }
 
-    .profile-picture {
-        position: static;
-        margin: 1em auto;
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     section {
         padding: 1em;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
     }
 }
